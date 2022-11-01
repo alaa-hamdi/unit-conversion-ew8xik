@@ -1,0 +1,19 @@
+<h1>Convertion test</h1>
+<div class="row">
+<input type="number" [(ngModel)]="valFrom" (input)="calculate()" (focus)="leftToRight=true"/>
+<select (input)="setFromUnit($event.target.value)" #left>
+    <option *ngFor="let measure of measurements" [selected]="measure.abbr === valFromUnit">{{ measure.abbr }}
+    </option>
+ </select> 
+ 
+ <div class="direction">
+   <h2 *ngIf="leftToRight">=&gt;</h2>
+   <h2 *ngIf="!leftToRight">&lt;=</h2>
+</div>
+
+<input type="number" [(ngModel)]="valTo" (input)="calculate()" (focus)="leftToRight=false"/>
+<select (input)="setToUnit($event.target.value)" #right>
+    <option *ngFor="let measure of measurements" [selected]="measure.abbr === valToUnit">{{ measure.abbr }}
+    </option>
+ </select>
+ </div>

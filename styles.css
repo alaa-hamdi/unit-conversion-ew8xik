@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400|Open+Sans:300);
+
+:root {
+  --odd: #ddd;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+}
+code,
+pre {
+  font-family: 'Inconsolata', monospace;
+  background: #ccc;
+  padding: 2px 5px;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 5px;
+  border-top: solid 1px #999;
+}
+.row:first-of-type {
+  margin-top: 15px;
+  border-top-width: 0;
+}
+.row:nth-child(odd) {
+  background: var(--odd);
+}
+.which {
+  padding: 5px;
+  min-width: 100px;
+}
+.info::first-letter {
+  text-transform: uppercase;
+}
+
+label,
+select {
+  font-size: 20pt;
+  border-width: 0;
+}
+
+input {
+  border-width: 0;
+  padding: 0 15px;
+  background: var(--odd);
+  width: 200px;
+  font-size: 16pt;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0;
+}
+
+.direction {
+  margin: 0 15px;
+}

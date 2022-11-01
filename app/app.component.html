@@ -1,0 +1,26 @@
+<h1>
+  <b> Information about {{ groupedDesciptions.length }} (!) measures </b>
+</h1>
+
+<h1>
+  <mark> Information about {{ descriptions.length }} (!) units </mark>
+</h1>
+<div>
+  <label
+    >Type of measurement:
+    <select (input)="setMeasure($event.target.value)">
+      <option
+        *ngFor="let measure of measures"
+        [selected]="measure === selectedMeasure"
+      >
+        {{ measure }}
+      </option>
+    </select></label
+  >
+  <conversion [measurements]="activeDescription"></conversion>
+  <description
+    class="row"
+    *ngFor="let desc of this.activeDescription"
+    [options]="desc"
+  ></description>
+</div>
